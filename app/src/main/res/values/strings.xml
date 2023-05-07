@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Delivery</string>
+    <string name="package_type">Type: %1$s</string>
+    <string name="sender_address">From: %1$s</string>
+    <string name="recipient_address">To: %1$s</string>
+    <string name="price">Price: %1$s</string>
 </resources>

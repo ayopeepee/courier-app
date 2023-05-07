@@ -5,4 +5,8 @@ data class BigPackage(
     override val fragility: Boolean,
     private val isCarNeeded: Boolean,
     private val weight: Int
-) : Package()
+) : Package() {
+    override fun toString(): String {
+        return "Big"
+    }
+}

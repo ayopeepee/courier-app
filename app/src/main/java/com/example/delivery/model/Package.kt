@@ -8,6 +8,6 @@ object Size {
 
 
 abstract class Package {
-    protected abstract val size: Int
-    protected abstract val fragility: Boolean
+    abstract val size: Int
+    abstract val fragility: Boolean
 }

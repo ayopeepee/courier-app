@@ -5,4 +5,8 @@ data class DocumentPackage(
     override val fragility: Boolean,
     private val sender: String,
     private val recipient: String
-) : Package()
+) : Package() {
+    override fun toString(): String {
+        return "Document"
+    }
+}
