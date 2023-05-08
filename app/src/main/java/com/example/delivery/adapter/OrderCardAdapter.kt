@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +13,7 @@ import com.example.delivery.data.Datasource
 
 class OrderCardAdapter(
     private val context: Context?,
-    private val textView: TextView
+    private val totalTextView: TextView
 ) : RecyclerView.Adapter<OrderCardAdapter.OrderCardViewHolder>() {
 
     private val orderList = Datasource.orders
@@ -25,7 +26,6 @@ class OrderCardAdapter(
         val recipientTextView: TextView? = view!!.findViewById(R.id.recipient_item)
         val priceTextView: TextView? = view!!.findViewById(R.id.price_item)
         val orderCheckBox: CheckBox? = view!!.findViewById(R.id.checkbox_order)
-
     }
 
 
@@ -51,8 +51,13 @@ class OrderCardAdapter(
             else
                 checkTotal -= orderData.price
 
-            textView.text = resources?.getString(R.string.total, checkTotal.toString())
+            totalTextView.text = resources?.getString(R.string.total, checkTotal.toString())
         }
+    }
+
+    fun uncheckAll() {
+        orderList.forEach { it.isTaken = false }
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int = orderList.size

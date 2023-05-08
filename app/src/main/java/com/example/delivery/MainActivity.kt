@@ -20,9 +20,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.verticalRecyclerView.adapter = OrderCardAdapter(applicationContext, binding.total)
+        val adapter = OrderCardAdapter(applicationContext, binding.total)
 
+        binding.verticalRecyclerView.adapter = adapter
 
+        binding.btnClear.setOnClickListener {
+            adapter.uncheckAll()
+        }
 
     }
 
