@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.delivery.adapter.OrderCardAdapter
 import com.example.delivery.data.Datasource
 import com.example.delivery.databinding.ActivityMainBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,5 +20,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.verticalRecyclerView.adapter = OrderCardAdapter(applicationContext)
+
+
+
+
     }
+
 }

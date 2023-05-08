@@ -4,4 +4,5 @@
     <string name="sender_address">From: %1$s</string>
     <string name="recipient_address">To: %1$s</string>
     <string name="price">Price: %1$s</string>
+    <string name="total">Total: %1$s</string>
 </resources>
