@@ -2,6 +2,7 @@ package com.example.delivery
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.CheckBox
 import androidx.recyclerview.widget.RecyclerView
 import com.example.delivery.adapter.OrderCardAdapter
 import com.example.delivery.data.Datasource
@@ -19,11 +20,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.verticalRecyclerView.adapter = OrderCardAdapter(applicationContext)
-
+        binding.verticalRecyclerView.adapter = OrderCardAdapter(applicationContext, binding.total)
 
 
 
     }
+
+
 
 }

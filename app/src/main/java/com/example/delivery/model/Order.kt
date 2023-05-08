@@ -5,7 +5,8 @@ data class Order(
     val _package: Package,
     val from: String,
     val to: String,
-    val price: Int
+    val price: Int,
+    var isTaken: Boolean
 
 
 )
