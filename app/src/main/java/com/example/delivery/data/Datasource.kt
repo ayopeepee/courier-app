@@ -52,6 +52,14 @@ object Datasource {
             "444 Fourth Ave",
             999,
             false
+        ),
+        Order(
+            Company("Aboba", "228 Avenue"),
+            DocumentPackage(fragility = false, sender = "Pushkina 1", recipient = "77 Second St"),
+            "Pushkina 1",
+            "77 Second St",
+            667,
+            false
         )
     )
 }
