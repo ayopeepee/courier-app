@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".SignUpActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_email"
-        android:layout_width="200sp"
+        android:id="@+id/text_input_layout_email"
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:hint="Email"
         android:layout_marginBottom="100sp"
@@ -20,23 +20,25 @@
         app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_input_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_password"
-        android:layout_width="200sp"
+        android:id="@+id/text_input_layout_password"
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:hint="Password"
         app:endIconMode="password_toggle"
-        app:layout_constraintEnd_toEndOf="@+id/text_input_email"
-        app:layout_constraintStart_toStartOf="@+id/text_input_email"
-        app:layout_constraintTop_toBottomOf="@+id/text_input_email"
+        app:layout_constraintEnd_toEndOf="@+id/text_input_layout_email"
+        app:layout_constraintStart_toStartOf="@+id/text_input_layout_email"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_email"
         app:startIconDrawable="@drawable/ic_lock">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_input_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
@@ -49,8 +51,8 @@
         android:fontFamily="@font/baloo_tamma"
         android:text="Sign up"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/text_input_email"
-        app:layout_constraintStart_toStartOf="@+id/text_input_email" />
+        app:layout_constraintBottom_toTopOf="@+id/text_input_layout_email"
+        app:layout_constraintStart_toStartOf="@+id/text_input_layout_email" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_signup"
@@ -60,9 +62,9 @@
         android:fontFamily="@font/baloo_tamma"
         android:text="Sign up"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/text_input_password"
-        app:layout_constraintStart_toStartOf="@+id/text_input_password"
-        app:layout_constraintTop_toBottomOf="@+id/text_input_password" />
+        app:layout_constraintEnd_toEndOf="@+id/text_input_layout_password"
+        app:layout_constraintStart_toStartOf="@+id/text_input_layout_password"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_password" />
 
 
 
