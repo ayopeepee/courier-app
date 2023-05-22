@@ -1,6 +1,16 @@
 buildscript {
+    ext {
+        kotlin_version = "1.8.0"
+        room_version = '2.5.0'
+        nav_version = '2.5.3'
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.15'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {

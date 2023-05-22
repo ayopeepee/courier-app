@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.delivery.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_orderManagerFragment"
+            app:destination="@id/orderManagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.delivery.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.example.delivery.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" />
+    <fragment
+        android:id="@+id/orderAddFragment"
+        android:name="com.example.delivery.OrderAddFragment"
+        android:label="OrderAddFragment" >
+        <action
+            android:id="@+id/action_orderAddFragment_to_orderManagerFragment"
+            app:destination="@id/orderManagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderManagerFragment"
+        android:name="com.example.delivery.OrderManagerFragment"
+        android:label="fragment_order_manager"
+        tools:layout="@layout/fragment_order_manager" >
+        <action
+            android:id="@+id/action_orderManagerFragment_to_orderAddFragment"
+            app:destination="@id/orderAddFragment" />
+    </fragment>
+</navigation>
