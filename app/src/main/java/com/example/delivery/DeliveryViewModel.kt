@@ -1,5 +1,7 @@
 package com.example.delivery
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -9,6 +11,7 @@ import kotlinx.coroutines.launch
 
 class DeliveryViewModel(private val orderDao: OrderDao) : ViewModel() {
 
+    val allOrders: LiveData<List<Order>> = orderDao.getOrders().asLiveData()
     private fun insertOrder(order: Order) {
         viewModelScope.launch {
             orderDao.insert(order)

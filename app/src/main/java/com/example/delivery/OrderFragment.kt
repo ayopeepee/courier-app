@@ -35,5 +35,12 @@ class OrderFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
+        val adapter = OrderListAdapter {}
+        binding.recyclerView.adapter = adapter
+        viewModel.allOrders.observe(this.viewLifecycleOwner) { orders ->
+            orders.let { adapter.submitList(it) }
+        }
+
+
     }
 }

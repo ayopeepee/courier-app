@@ -7,17 +7,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.delivery.database.order.Order
 import com.example.delivery.databinding.OrderListItemBinding
 import androidx.recyclerview.widget.ListAdapter
+import androidx.fragment.app.activityViewModels
 
 class OrderListAdapter(private val onOrderClicked: (Order) -> Unit) :
     ListAdapter<Order, OrderListAdapter.OrderViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
-        return OrderViewHolder(OrderListItemBinding.inflate(LayoutInflater.from(parent.context)))
+        return OrderViewHolder(
+            OrderListItemBinding
+                .inflate(
+                    LayoutInflater
+                        .from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         val current = getItem(position)
-        holder.itemView.setOnClickListener {  }
+        holder.itemView.setOnClickListener {
+            onOrderClicked(current)
+        }
+        holder.bind(current)
 
     }
 
